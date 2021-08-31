@@ -15,6 +15,13 @@
     <input type="number" name="phone" placeholder="phoneNumber"><br>
     <input type="number" name="salary" placeholder="salary"><br>
     <input type="text" name="position" placeholder="position"><br>
+    <input type="password" name="password" placeholder="password"><br>
+
+    EmployeeType: <select name="employee.id">
+    <option value="EMPLOYEE">EMPLOYEE</option>
+    <option value="ADMIN">ADMIN</option>
+</select>
+
     Company: <select name="company.id">
     <option th:each="company: ${companies}"
             th:text="${company.name}"

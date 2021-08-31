@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+add topic <a href="/addTopic"> add topic</a><br>
+
+<table border="1">
+    <tr>
+       <th>from topic?</th>
+        <th> topic text</th>
+        <th> date</th>
+        <th> delete topic</th>
+    </tr>
+    <tr th:each="topic: ${topics}">
+       <td th:text="${topic.employee.name}" > <a href="/showMessage"></a> </td>
+        <td th:text="${topic.text}"></td>
+        <td th:text="${topic.date}"></td>
+        <td><a th:href="@{'/deleteTopic'(id=${topic.id})}">delete</a></td>
+
+
+    </tr>
+
+
+</table>
+</body>
+</html>

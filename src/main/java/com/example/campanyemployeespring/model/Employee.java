@@ -1,6 +1,7 @@
 package com.example.campanyemployeespring.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "employee")
+@Builder
 public class Employee {
 
     @Id
@@ -22,8 +24,11 @@ public class Employee {
     private String phone;
     private int salary;
     private String position;
+    private String password;
     @ManyToOne
     private Company company;
-
+    @Enumerated(value = EnumType.STRING)
+    @JoinColumn(name = "employee_type")
+    private EmployeeType employeeType;
 
 }

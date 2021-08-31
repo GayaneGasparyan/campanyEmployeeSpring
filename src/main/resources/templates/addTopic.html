@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span class="label-input100">Message</span>
+<form action="/employee/addTopic"  method="post">
+    <textarea  name="text"></textarea><br>
+    <select name="employee.id">
+        <option th:each="employee:${employees}"
+                th:text="${employee.name}"
+                th:value="${employee.id}"></option>
+    </select>
+    <input type="date " name="date" placeholder="date">
+    <input type="submit" value="Save"/><br>
+</form>
+
+</body>
+</html>

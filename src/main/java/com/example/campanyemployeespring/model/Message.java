@@ -1,7 +1,6 @@
 package com.example.campanyemployeespring.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,16 +10,21 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Builder
-@Table(name = "company")
-public class Company {
+@Table(name = "message")
+public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private int size;
-    private String address;
+    private String message;
+
+    @ManyToOne
+    @JoinColumn(name = "from_id")
+    private Employee fromId;
+
+    @ManyToOne
+    @JoinColumn(name = "to_id")
+    private Employee toId;
 
 
 }

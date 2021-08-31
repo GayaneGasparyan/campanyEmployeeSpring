@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-Employee Page |  <a href="/addEmployee"> Add Employee</a>
+<a href="/logout">logout</a><br>
+<br>
+Employee Page |  <a href="/addEmployee"> Add Employee</a><br>
+Send Message <a href="/sendMessage"> send message</a><br>
+add topic <a href="/addTopic"> add topic</a><br>
+topics <a href="/topics">  topics</a><br>
 
 <table border="1">
     <tr>
@@ -26,7 +31,7 @@ Employee Page |  <a href="/addEmployee"> Add Employee</a>
         <td th:text="${employee.phone}"></td>
         <td th:text="${employee.salary}"></td>
         <td th:text="${employee.position}"></td>
-        <td th:text="${employee.company}"></td>
+        <td th:text="${employee.company.name}"></td>
 
     </tr>
 

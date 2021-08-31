@@ -5,7 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/logout">logout</a><br>
+
+<br>
 <h4>Company Page</h4> | <a href="/addCompany"> Add Company</a>
+<a href="/messages">Messages</a> <br>
+
+
+
 
 <table border="1">
     <tr>
@@ -14,7 +22,6 @@
         <th>size</th>
         <th>address</th>
         <th>delete</th>
-
     </tr>
     <tr th:each="company: ${companies}">
         <td th:text="${company.id}"></td>
